@@ -8,12 +8,13 @@ module.exports = {
                           headers: { "Content-type": "application/JSON" } 
                         };
         
-        let companyStats = [];
+        let companyStats = {};
         
         await fetch(url, options)
                         .then(res => res.json())
                         .then(data => {
-                            companyStats = data;
+                            console.log("The goods:\n\n" + data.profile.price);
+                            companyStats = data.profile;
                         })
                         .catch("Fetch failed");
 
