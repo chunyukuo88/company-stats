@@ -1,0 +1,8 @@
+body {
+    backdrop-filter: blur(5px);
+    background: url("../images/columbus.jpg") no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: yellow;
+    font-family: 'Black Ops One', cursive;
+  }

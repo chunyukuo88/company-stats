@@ -1,17 +1,39 @@
+:root {
+    --heading:   rgb(251, 217, 25);
+    --section-L: rgb(138, 134, 134);
+    --section-R: chartreuse;
+  }
+
+
+#heading {
+    color: var(--heading);
+    font-family: 'Black Ops One', cursive;
+    text-align: center;
+    transition: 1s;
+}
+
+#heading:hover {
+    color: black;
+    transition: 1s;
+}
+
+
+/*----------------------The page is divided into these two sections------------------------*/
+#left-section {
+    border-color: var(--section-L);
+    border-style: groove;
+    border-width: 17px;
+}
+
+#right-section {
+    border-color:  var(--section-R);
+    border-style: groove;
+    border-width: 17px;
+}
+/*-----------------------------------------------------------------------------------------*/
+
 .wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-}
-
-#left-section {
-    border-style: groove;
-    border-color: coral;
-    border-width: 7px;
-}
-
-#right-section {
-    border-style: groove;
-    border-color: coral;
-    border-width: 7px;
 }
