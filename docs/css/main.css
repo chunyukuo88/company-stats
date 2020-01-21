@@ -1,7 +1,7 @@
 :root {
-    --heading:   rgb(251, 217, 25);
-    --section-L: rgb(138, 134, 134);
-    --section-R: chartreuse;
+    --heading:   rgb(47, 1, 155);
+    --section-L: rgb(141, 14, 14);
+    --section-R: rgb(77, 1, 128);
   }
 
 #button {
@@ -10,6 +10,28 @@
 
 #button:hover{
     background: var(--section-L);
+}
+
+.data-slots {
+    border: 1px;
+    margin: 1px;
+    padding: 1px;
+
+    border-style: solid;
+    border-color: var(--section-L);
+    border-width: 2px;
+
+    display: flex;
+    align-items: center;
+}
+
+#dataGrid{
+    display: grid;
+    border-radius: 2px;
+    /* grid-column-gap: 1px;
+    grid-row-gap: 1px; */
+    grid-template-columns:  30% 70%;
+    grid-template-rows:     repeat(17, 20px);
 }
 
 #heading {
@@ -28,19 +50,27 @@
 /*----------------------The page is divided into these two sections------------------------*/
 #left-section {
     border-color: var(--section-L);
-    border-style: groove;
-    border-width: 17px;
+    border-style: solid;
+    border-width: 10px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 500px;
 }
 
 #right-section {
     border-color:  var(--section-R);
-    border-style: groove;
-    border-width: 17px;
+    border-style: solid;
+    border-width: 10px;
+    width: 70%;
+    height: 500px;
 }
 /*-----------------------------------------------------------------------------------------*/
 
-.wrapper {
+.sections-wrapper {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
 }

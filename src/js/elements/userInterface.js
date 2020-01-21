@@ -4,7 +4,7 @@ module.exports = {
 
     let root = document.getElementById('app');
     let wrapper = document.createElement('wrapper');
-    wrapper.classList.add("wrapper");
+    wrapper.classList.add("sections-wrapper");
     
     let leftSection = document.createElement('wrapper');
     leftSection.id = 'left-section';
