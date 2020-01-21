@@ -18,6 +18,7 @@ function populateDataZone(company){
     range.innerText = company.range;
     let changes = document.getElementById('data-label-15');
     changes.innerText = company.changes;
+    changes.style.color = (changes.innerText > 0) ? 'green' : 'red';
     let changesPercentage = document.getElementById('data-label-17');
     changesPercentage.innerText = company.changesPercentage;
     changesPercentage.style.color = (changesPercentage.innerText.includes('+')) ? 'green' : 'red';
@@ -25,8 +26,10 @@ function populateDataZone(company){
     exchange.innerText = company.exchange;
     let industry = document.getElementById('data-label-21');
     industry.innerText = company.industry;
-    let website = document.getElementById('data-label-23');
-    website.innerText = company.website;
+        let website = document.getElementById('data-label-23');
+        let websiteAnchor = document.createElement('a');
+        websiteAnchor.innerText = company.website;
+        website.appendChild(websiteAnchor);
     let description = document.getElementById('data-label-25');
     description.innerText = company.description;
     let ceo = document.getElementById('data-label-27');

@@ -1,15 +1,22 @@
 :root {
-    --heading:   rgb(47, 1, 155);
+    --heading:   rgb(164, 129, 245);
     --section-L: rgb(141, 14, 14);
     --section-R: rgb(77, 1, 128);
+    --body-font: rgb(249, 253, 17);
   }
 
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--body-font);
+}
+
 #button {
-    background: black;
+    background: linear-gradient(to bottom, var(--heading), var(--body-font));
+    border-radius: 20px;
 }
 
 #button:hover{
-    background: var(--section-L);
+    background: linear-gradient(to bottom, var(--section-L), var(--heading));
 }
 
 .data-slots {
@@ -27,14 +34,19 @@
 
 #dataGrid{
     display: grid;
-    border-radius: 2px;
+    border-radius: 20px;
     /* grid-column-gap: 1px;
     grid-row-gap: 1px; */
     grid-template-columns:  30% 70%;
     grid-template-rows:     repeat(17, 20px);
 }
 
+#data-label-25 {
+    
+}
+
 #heading {
+    backdrop-filter: blur(8px);
     color: var(--heading);
     font-family: 'Black Ops One', cursive;
     text-align: center;
@@ -42,14 +54,21 @@
 }
 
 #heading:hover {
-    color: black;
+    color: var(--body-font);
     transition: 1s;
 }
 
+#input {
+    background: var(--heading);
+    border-radius: 20px;
+    text-align: center;
+}
 
 /*----------------------The page is divided into these two sections------------------------*/
 #left-section {
+    backdrop-filter: blur(5px);
     border-color: var(--section-L);
+    border-radius: 20px;
     border-style: solid;
     border-width: 10px;
     
@@ -61,7 +80,9 @@
 }
 
 #right-section {
+    backdrop-filter: blur(5px);
     border-color:  var(--section-R);
+    border-radius: 20px;
     border-style: solid;
     border-width: 10px;
     width: 70%;

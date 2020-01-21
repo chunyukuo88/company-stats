@@ -7,9 +7,8 @@ module.exports = {
         dataGrid.id = "dataGrid";    
         dataZone.appendChild(dataGrid);
 
-        /* There are 16 data points. I add two additional slots for the
-        company title, which will span multiple grid slots. Hence the 34, not 32: */
-        for (let index = 0; index < 34; index++) {
+        /* There are 16 data points.*/
+        for (let index = 0; index < 32; index++) {
             const dataSlot = document.createElement("p");
             dataSlot.classList.add('data-slots');
             dataSlot.id = ('data-label-' + index);
