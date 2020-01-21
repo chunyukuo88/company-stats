@@ -4,7 +4,7 @@ module.exports = {
         const root = document.getElementById('app');
         const heading = document.createElement('h1');
         heading.id = "heading";
-        heading.innerText = "Kapital Vue"         
+        heading.innerText = "Vanilla Kapital"         
         root.appendChild(heading);
     }
 

@@ -4,6 +4,13 @@
     --section-R: chartreuse;
   }
 
+#button {
+    background: black;
+}
+
+#button:hover{
+    background: var(--section-L);
+}
 
 #heading {
     color: var(--heading);

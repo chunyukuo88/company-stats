@@ -1,16 +1,13 @@
 const heading = require('../src/js/elements/heading');
+const searchPanel = require('./js/elements/searchPanel');
 const fetcher = require('../src/js/fetch');
+const interface = require('../src/js/elements/userInterface');
+
 
 heading.createHeader();
-
-let root = document.getElementById('app');
-let wrapper = document.createElement('wrapper');
-wrapper.classList.add("wrapper");
-
-let leftSection = document.createElement('wrapper');
-leftSection.id = 'left-section';
-let rightSection = document.createElement('wrapper');
-rightSection.id = 'right-section';
+interface.createSections();
+searchPanel.createForm();
+searchPanel.createButton();
 
 
 
@@ -19,14 +16,11 @@ fetcher.fetchCompanyInfo('GOOG')
 
             let name = document.createElement('h1');  
             name.innerText = company.companyName;  
-            leftSection.appendChild(name);
+            let rightSection = document.getElementById('right-section');
+            rightSection.appendChild(name);
 
             let ind = document.createElement('h1');  
             ind.innerText = company.industry;  
             rightSection.appendChild(ind);
             }
         );
-
-wrapper.appendChild(leftSection);
-wrapper.appendChild(rightSection);
-root.append(wrapper);
