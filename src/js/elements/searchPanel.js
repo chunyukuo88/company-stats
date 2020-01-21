@@ -42,10 +42,13 @@ function createButton(){
     button.id = "button";
     button.innerText = "Search"
     button.onclick = () => {
-        fetcher.fetchCompanyInfo('BABA')  
-            .then(company => {populateDataZone(company);}
-        )
-    }  
+        let stock = document.getElementById('form').elements[0].value;
+        fetcher.fetchCompanyInfo(stock)
+            .then(company => {
+                              populateDataZone(company);
+                             }
+                 )
+        }  
     let leftSection = document.getElementById('left-section');
     leftSection.appendChild(button);
 }
@@ -54,9 +57,10 @@ function createForm(){
     const form = document.createElement('form');
     form.id = "form";
     form.innerText = "Stock symbol";
-    const inputSpace = document.createElement('input');
-    inputSpace.type = 'text';
-    form.appendChild(inputSpace);
+        const inputSpace = document.createElement('input');
+        inputSpace.id = 'input';
+        inputSpace.type = 'text';
+        form.appendChild(inputSpace);
     let leftSection = document.getElementById('left-section');
     leftSection.appendChild(form);
 }
