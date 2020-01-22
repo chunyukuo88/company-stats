@@ -1,12 +1,15 @@
 :root {
-    --heading:   rgb(253, 246, 181);
-    --section-border: rgb(7, 199, 233);
-    --body-font: rgb(74, 75, 32);
-  }
+--heading:          rgb(253, 246, 181);
+--section-border:   rgb(7, 199, 233);
+--data-zone-border: rgb(161, 7, 233);
+--body-font:        rgb(74, 75, 32);
+}
 
 #button {
     background: linear-gradient(to bottom, var(--section-border), var(--heading));
-    border-radius: 20px;
+    border-radius: 0 0 20px 20px;
+    height: 40px;
+    width: 150px;
 }
 
 #button:hover{
@@ -14,14 +17,27 @@
 }
 
 #copyright {
-    backdrop-filter: blur(18px);
     text-align: center;
 }
 
+#copyright:hover {
+    animation: shake 0.6s;
+    animation-iteration-count: 1;
+    color: orange;
+}
+
+#data-label-0, #data-label-2, #data-label-4, #data-label-6, #data-label-8,
+#data-label-10, #data-label-12, #data-label-14, #data-label-16, #data-label-18, 
+#data-label-20, #data-label-22, #data-label-24, #data-label-26, #data-label-28, 
+#data-label-30, #data-label-32 {
+  background: linear-gradient(to left, #ffffff, var(--section-border));
+  color: black;
+}
+
 .data-slots {
-    border: 0px;
-    margin: 0px;
-    padding: 0px;
+    border: 0 0 0 4px;
+    margin: 0 0 0 0;
+    padding:0 0 0 4px;
 
     background: linear-gradient(to right, #ffffff, var(--section-border));
 
@@ -40,17 +56,22 @@
     grid-template-rows:     repeat(17, auto);
 }
 
-#data-label-0 {
-    border-radius: 10px 0px 0px 0px;
-}
-
-#data-label-25 {
-    border-radius: 10px 0px 0px 0px;
-}
-
 #heading {
     backdrop-filter: contrast(64%);
-    border-radius: 20px;
+    border-color: var(--section-border);
+    /* border-radius: 20px; */
+    border-style: solid;
+    -webkit-border-image: 
+      -webkit-linear-gradient(to top, var(--section-border), rgba(0, 0, 0, 0)) 1 100%;
+    -moz-border-image:
+      -moz-linear-gradient(to top, var(--section-border), rgba(0, 0, 0, 0)) 1 100%;    
+    -o-border-image:
+      -o-linear-gradient(to top, var(--section-border), rgba(0, 0, 0, 0)) 1 100%;
+    border-image:
+      linear-gradient(to top, var(--section-border), rgba(0, 0, 0, 0)) 1 100%;
+    border-width: 10px;
+
+
     text-align: center;
 
     height: 100%;
@@ -61,41 +82,56 @@
 
 #input {
     background: var(--heading);
-    border-radius: 20px;
+    border-radius: 20px 20px 0 0;
+    height: 30px;
     text-align: center;
+    width: 146px;
+}
+
+#intro {
+    border:  3px;
+    margin:  3px;
+    padding: 3px;
 }
 
 /*----------------------The page is divided into these two sections------------------------*/
 #left-section {
-    /* backdrop-filter: blur(5px); */
-    backdrop-filter: contrast(54%);
-    border-color: var(--section-border);
-    border-radius: 20px;
-    border-style: solid;
-    border-width: 10px;
+    margin: 5px;   
     
-    margin: 2px;   
-
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 30%;
+    flex-direction: column;
+    
     height: 500px;
+    width: 30%;
 }
 
 #right-section {
-    backdrop-filter: blur(5px);
-    border-color:  var(--section-border);
-    border-radius: 20px;
-    border-style: solid;
+    margin: 5px;
+    
     border-width: 10px;
     width: 70%;
-    height: 500px;
+    height: auto;
 }
 /*-----------------------------------------------------------------------------------------*/
 
 .sections-wrapper {
+    backdrop-filter: blur(15px);
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }

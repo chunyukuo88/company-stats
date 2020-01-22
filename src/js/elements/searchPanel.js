@@ -18,27 +18,26 @@ function populateDataZone(company){
     range.innerText = company.range;
         let changes = document.getElementById('data-label-15');
         changes.innerText = company.changes;
-        changes.style.color = (changes.innerText > 0) ? 'green' : 'red';
+        changes.style.color = (changes.innerText > 0) ? 'chartreuse' : 'red';
         let changesPercentage = document.getElementById('data-label-17');
     changesPercentage.innerText = company.changesPercentage;
-    changesPercentage.style.color = (changesPercentage.innerText.includes('+')) ? 'green' : 'red';
+    changesPercentage.style.color = (changesPercentage.innerText.includes('+')) ? 'chartreuse' : 'red';
     let exchange = document.getElementById('data-label-19');
     exchange.innerText = company.exchange;
     let industry = document.getElementById('data-label-21');
     industry.innerText = company.industry;
-        let website = document.getElementById('data-label-23');
-        let websiteAnchor = document.createElement('a');
-        websiteAnchor.innerText = company.website;
-        website.appendChild(websiteAnchor);
+        let website = document.getElementById('company-website');
+        website.href = company.website;
+        website.target = "_blank";
+        website.innerText = company.website;
     let description = document.getElementById('data-label-25');
     description.innerText = company.description;
     let ceo = document.getElementById('data-label-27');
     ceo.innerText = company.ceo;
     let sector = document.getElementById('data-label-29');
     sector.innerText = company.sector;
-    let image = document.getElementById('data-label-31');
-    let companyImage = document.createElement('img');
-    companyImage.src = company.image;
+    let logo = document.getElementById('image');
+    logo.src = company.image;
 }
 
 function createButton(){
@@ -59,7 +58,7 @@ function createButton(){
 
 function createForm(){
     const form = document.createElement('form');
-    form.id = "form";
+    form.id = 'form';
         const inputSpace = document.createElement('input');
         inputSpace.id = 'input';
         inputSpace.placeholder = 'Stock symbol';
@@ -69,7 +68,16 @@ function createForm(){
     leftSection.appendChild(form);
 }
 
+function createIntro(){
+    const intro = document.createElement('p');
+    intro.id = 'intro';
+    intro.innerText = 'Welcome to Capital Vue 2.0! This site is an homage to a previous employer also involved in the financial data market. Enter in the stock ticker symbol of a publicly traded company to see its latest price data and more!';
+    let leftSection = document.getElementById('left-section');
+    leftSection.appendChild(intro);
+}
+
 module.exports = {
     createForm,
-    createButton
+    createButton,
+    createIntro
   };

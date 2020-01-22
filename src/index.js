@@ -5,7 +5,10 @@ const resultsPanel = require('./js/elements/resultsPanel');
 
 heading.createHeader();
 interface.createSections();
+
+searchPanel.createIntro();
 searchPanel.createForm();
 searchPanel.createButton();
+
 resultsPanel.createDataZone();
 resultsPanel.affixLabels();

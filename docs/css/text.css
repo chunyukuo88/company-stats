@@ -1,11 +1,15 @@
 :root {
     --heading:   rgb(253, 246, 181);
     --body-font: rgb(74, 75, 32);
-  }
+}
 
 body {
     font-family: 'Roboto', sans-serif;
     color: var(--body-font);
+}
+
+#company-website:hover{
+    color: orange;
 }
 
 #copyright {
@@ -20,4 +24,17 @@ body {
 #heading {
     color: var(--heading);
     font-family: 'Josefin Sans', sans-serif;
+}
+
+#heading:hover {
+    color: rgb(197, 255, 61);
+}
+
+#intro {
+    color: var(--heading);
+    text-align: justify;
+}
+
+#intro:hover {
+    color: rgb(230, 188, 97);
 }

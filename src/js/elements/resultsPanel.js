@@ -14,6 +14,16 @@ module.exports = {
             dataSlot.id = ('data-label-' + index);
             dataGrid.appendChild(dataSlot);
         }
+
+        let imageContainer = document.getElementById('data-label-31');
+        let image = document.createElement('img');
+        image.id = 'image';
+        imageContainer.appendChild(image);
+
+        let site = document.createElement('a');
+        site.id = 'company-website';
+        let siteContainer = document.getElementById('data-label-23');
+        siteContainer.appendChild(site);
     },
 
     affixLabels(){
@@ -49,10 +59,7 @@ module.exports = {
         ceo.innerText = 'Chief Executive';
         const sector = document.getElementById('data-label-28');
         sector.innerText = 'Sector';
-        const image = document.getElementById('data-label-30');
-        image.innerText = 'Logo';
-
+        const logo = document.getElementById('data-label-30');
+        logo.innerText = 'Logo';
     }
-
-
 }
