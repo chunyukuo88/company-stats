@@ -16,10 +16,10 @@ function populateDataZone(company){
     lastDiv.innerText = company.lastDiv;
     let range = document.getElementById('data-label-13');
     range.innerText = company.range;
-    let changes = document.getElementById('data-label-15');
-    changes.innerText = company.changes;
-    changes.style.color = (changes.innerText > 0) ? 'green' : 'red';
-    let changesPercentage = document.getElementById('data-label-17');
+        let changes = document.getElementById('data-label-15');
+        changes.innerText = company.changes;
+        changes.style.color = (changes.innerText > 0) ? 'green' : 'red';
+        let changesPercentage = document.getElementById('data-label-17');
     changesPercentage.innerText = company.changesPercentage;
     changesPercentage.style.color = (changesPercentage.innerText.includes('+')) ? 'green' : 'red';
     let exchange = document.getElementById('data-label-19');
@@ -37,7 +37,8 @@ function populateDataZone(company){
     let sector = document.getElementById('data-label-29');
     sector.innerText = company.sector;
     let image = document.getElementById('data-label-31');
-    image.innerText = company.image;
+    let companyImage = document.createElement('img');
+    companyImage.src = company.image;
 }
 
 function createButton(){
@@ -59,9 +60,9 @@ function createButton(){
 function createForm(){
     const form = document.createElement('form');
     form.id = "form";
-    form.innerText = "Stock symbol";
         const inputSpace = document.createElement('input');
         inputSpace.id = 'input';
+        inputSpace.placeholder = 'Stock symbol';
         inputSpace.type = 'text';
         form.appendChild(inputSpace);
     let leftSection = document.getElementById('left-section');

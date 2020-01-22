@@ -1,31 +1,32 @@
 :root {
-    --heading:   rgb(164, 129, 245);
-    --section-L: rgb(141, 14, 14);
-    --section-R: rgb(77, 1, 128);
-    --body-font: rgb(249, 253, 17);
+    --heading:   rgb(253, 246, 181);
+    --section-border: rgb(7, 199, 233);
+    --body-font: rgb(74, 75, 32);
   }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    color: var(--body-font);
-}
-
 #button {
-    background: linear-gradient(to bottom, var(--heading), var(--body-font));
+    background: linear-gradient(to bottom, var(--section-border), var(--heading));
     border-radius: 20px;
 }
 
 #button:hover{
-    background: linear-gradient(to bottom, var(--section-L), var(--heading));
+    background: linear-gradient(to bottom, rgb(112, 219, 238), var(--heading));
+}
+
+#copyright {
+    backdrop-filter: blur(18px);
+    text-align: center;
 }
 
 .data-slots {
-    border: 1px;
-    margin: 1px;
-    padding: 1px;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+
+    background: linear-gradient(to right, #ffffff, var(--section-border));
 
     border-style: solid;
-    border-color: var(--section-L);
+    border-color: var(--section-border);
     border-width: 2px;
 
     display: flex;
@@ -35,27 +36,27 @@ body {
 #dataGrid{
     display: grid;
     border-radius: 20px;
-    /* grid-column-gap: 1px;
-    grid-row-gap: 1px; */
     grid-template-columns:  30% 70%;
-    grid-template-rows:     repeat(17, 20px);
+    grid-template-rows:     repeat(17, auto);
+}
+
+#data-label-0 {
+    border-radius: 10px 0px 0px 0px;
 }
 
 #data-label-25 {
-    
+    border-radius: 10px 0px 0px 0px;
 }
 
 #heading {
-    backdrop-filter: blur(8px);
-    color: var(--heading);
-    font-family: 'Black Ops One', cursive;
+    backdrop-filter: contrast(64%);
+    border-radius: 20px;
     text-align: center;
-    transition: 1s;
-}
 
-#heading:hover {
-    color: var(--body-font);
-    transition: 1s;
+    height: 100%;
+    border: 30px;
+    margin: 30px;
+    padding: 30px;
 }
 
 #input {
@@ -66,12 +67,15 @@ body {
 
 /*----------------------The page is divided into these two sections------------------------*/
 #left-section {
-    backdrop-filter: blur(5px);
-    border-color: var(--section-L);
+    /* backdrop-filter: blur(5px); */
+    backdrop-filter: contrast(54%);
+    border-color: var(--section-border);
     border-radius: 20px;
     border-style: solid;
     border-width: 10px;
     
+    margin: 2px;   
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,7 +85,7 @@ body {
 
 #right-section {
     backdrop-filter: blur(5px);
-    border-color:  var(--section-R);
+    border-color:  var(--section-border);
     border-radius: 20px;
     border-style: solid;
     border-width: 10px;

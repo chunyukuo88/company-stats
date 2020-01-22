@@ -12,7 +12,6 @@ module.exports = {
             const dataSlot = document.createElement("p");
             dataSlot.classList.add('data-slots');
             dataSlot.id = ('data-label-' + index);
-            dataSlot.innerText = '#' + index;
             dataGrid.appendChild(dataSlot);
         }
     },

@@ -1,0 +1,23 @@
+:root {
+    --heading:   rgb(253, 246, 181);
+    --body-font: rgb(74, 75, 32);
+  }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--body-font);
+}
+
+#copyright {
+    color: var(--heading);
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#data-label-15, #data-label-17 {
+    font-weight: bold;
+}
+
+#heading {
+    color: var(--heading);
+    font-family: 'Josefin Sans', sans-serif;
+}
