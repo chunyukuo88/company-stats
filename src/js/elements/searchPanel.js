@@ -1,43 +1,40 @@
 const fetcher = require('./fetch');
 
+function addInnerText(id, company, categoryFromSite){
+    let result = document.getElementById(id);
+    result.innerText = categoryFromSite;
+    return result;
+}
 
 function populateDataZone(company){
-    let name = document.getElementById('data-label-1');
-    name.innerText = company.companyName;
-    let price = document.getElementById('data-label-3');
-    price.innerText = ('$' + company.price);
-    let beta = document.getElementById('data-label-5');
-    beta.innerText = company.beta;
-    let volAvg = document.getElementById('data-label-7');
-    volAvg.innerText = company.volAvg;
-    let mktCap = document.getElementById('data-label-9');
-    mktCap.innerText = company.mktCap;
-    let lastDiv = document.getElementById('data-label-11');
-    lastDiv.innerText = company.lastDiv;
-    let range = document.getElementById('data-label-13');
-    range.innerText = company.range;
-        let changes = document.getElementById('data-label-15');
-        changes.innerText = company.changes;
+    let name    = addInnerText('data-label-1', company, company.companyName);
+    let price   = addInnerText('data-label-3', company, ('$' + company.price));
+    let beta    = addInnerText('data-label-5', company, company.beta);
+    let volAvg  = addInnerText('data-label-7', company, company.volAvg);
+    let mktCap  = addInnerText('data-label-9', company, company.mktCap);
+    let lastDiv = addInnerText('data-label-11', company, company.lastDiv);
+    let range   = addInnerText('data-label-13', company, company.range);
+    let changes = addInnerText('data-label-15', company, company.changes);
         changes.style.color = (changes.innerText > 0) ? 'chartreuse' : 'red';
-        let changesPercentage = document.getElementById('data-label-17');
-    changesPercentage.innerText = company.changesPercentage;
-    changesPercentage.style.color = (changesPercentage.innerText.includes('+')) ? 'chartreuse' : 'red';
-    let exchange = document.getElementById('data-label-19');
-    exchange.innerText = company.exchange;
-    let industry = document.getElementById('data-label-21');
-    industry.innerText = company.industry;
-        let website = document.getElementById('company-website');
+    let changesPercentage = addInnerText('data-label-17', company, company.changesPercentage);
+        changesPercentage.style.color = (changesPercentage.innerText.includes('+')) ? 'chartreuse' : 'red';
+    let exchange = addInnerText('data-label-19', company, company.exchange);
+    let industry = addInnerText('data-label-21', company, company.industry);
+    let website = addInnerText('company-website', company, company.website);
         website.href = company.website;
         website.target = "_blank";
         website.innerText = company.website;
-    let description = document.getElementById('data-label-25');
-    description.innerText = company.description;
-    let ceo = document.getElementById('data-label-27');
-    ceo.innerText = company.ceo;
-    let sector = document.getElementById('data-label-29');
-    sector.innerText = company.sector;
+    let description = addInnerText('data-label-25', company, company.description);
+    let ceo = addInnerText('data-label-27', company, company.ceo);
+    let sector = addInnerText('data-label-29', company, company.sector);
+    
     let logo = document.getElementById('image');
-    logo.src = company.image;
+        logo.src = company.image;
+    let imageAnchor = document.createElement('a');
+        imageAnchor.href = company.website;
+    imageAnchor.appendChild(logo);
+    let imageSlot = document.getElementById('data-label-31');
+    imageSlot.appendChild(imageAnchor)
 }
 
 function createButton(){
